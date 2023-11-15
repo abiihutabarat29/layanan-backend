@@ -9,6 +9,7 @@ import ProductRoute from "./routes/ProductRoute.js";
 import AuthRoute from "./routes/AuthRoute.js";
 import InstansiRoute from "./routes/InstansiRoute.js";
 import DivisionRoute from "./routes/DivisionRoute.js";
+import RoleRoute from "./routes/RoleRoute.js";
 
 dotenv.config();
 
@@ -46,6 +47,7 @@ app.use(ProductRoute);
 app.use(AuthRoute);
 app.use(InstansiRoute);
 app.use(DivisionRoute);
+app.use(RoleRoute);
 
 //Aktifkan jika melakukan seeder tabel session ke database mysql
 
