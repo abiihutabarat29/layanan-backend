@@ -1,0 +1,98 @@
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name":"Agung",
+    "email":"agung@gmail.com",
+    "password":"12345678",
+    "confPassword": "12345678",
+    "role":"user"
+}
+
+###
+GET http://localhost:5000/users
+
+###
+GET http://localhost:5000/users/1670670b-f96e-49ad-8534-a7ec5dc3e3a5
+
+###
+PATCH http://localhost:5000/users/3f38de36-572e-429d-84df-8ae3e1cd1763
+Content-Type: application/json
+
+{
+    "name":"Zulfahmi",
+    "email":"zulfahmi22@gmail.com",
+    "password":"",
+    "confPassword": "",
+    "role":"user"
+}
+
+###
+DELETE  http://localhost:5000/users/3f38de36-572e-429d-84df-8ae3e1cd1763
+
+###
+//Login Admin
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email":"abiihutabarat29@gmail.com",
+    "password":"12345678"
+}
+
+###
+//Login User
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email":"kurnia@gmail.com",
+    "password":"12345678"
+}
+
+###
+GET http://localhost:5000/me
+
+###
+DELETE http://localhost:5000/logout
+
+###
+GET http://localhost:5000/products
+
+###
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+      "name":"Kaos Kaido",
+      "price":110000
+}
+
+###
+GET http://localhost:5000/products
+
+###
+GET http://localhost:5000/products/94e19e2d-df75-4aa1-8829-a853c50fe381
+
+###
+PATCH  http://localhost:5000/products/b0764cb1-9f76-4a58-a57a-a0c8b11a8255
+Content-Type: application/json
+
+{
+      "name":"Kaos Kaido Updated",
+      "price":120000
+}
+
+###
+DELETE  http://localhost:5000/products/ae5b0e7d-c808-4d04-ac49-8cdf8fb4cf7e
+
+###
+POST http://localhost:5000/instansi
+Content-Type: application/json
+
+{
+    "name":"Dinas Komunikasi dan Informatika"
+}
+
+###
+GET http://localhost:5000/instansi/
