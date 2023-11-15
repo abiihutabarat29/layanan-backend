@@ -3,11 +3,14 @@ POST http://localhost:5000/users
 Content-Type: application/json
 
 {
-    "name":"Agung",
-    "email":"agung@gmail.com",
+    "name":"Abii Hutabarat",
+    "nip":"121212121212121212",
+    "email":"abiihutabarat@gmail.com",
+    "instansiId":"1",
+    "RoleId":"1",
+    "divisionId":"1",
     "password":"12345678",
-    "confPassword": "12345678",
-    "role":"user"
+    "confPassword": "12345678"
 }
 
 ###
@@ -96,7 +99,7 @@ POST http://localhost:5000/instansi
 Content-Type: application/json
 
 {
-    "name":"Dinas Komunikasi dan Informatika"
+    "name":"Dinas Pencatatan dan Kependudukan"
 }
 
 ###
@@ -107,7 +110,7 @@ PATCH http://localhost:5000/instansi/e05532c9-d6a4-49b5-803a-32b3c4c3134b
 Content-Type: application/json
 
 {
-    "name":"Dinas Pencatatan dan Kependudukan"
+    "name":"Dinas Komunikasi dan Informatika"
 }
 
 ###
@@ -141,3 +144,29 @@ Content-Type: application/json
 
 ###
 DELETE  http://localhost:5000/division/0f9635ad-997b-4739-8378-3d769f5c90b6
+
+// Modul Role
+###
+POST http://localhost:5000/role
+Content-Type: application/json
+
+{
+    "name":"User"
+}
+
+###
+GET http://localhost:5000/role
+
+###
+GET http://localhost:5000/role/ae9ac2cc-4610-42c9-b848-23acb9b935db
+
+###
+PATCH http://localhost:5000/role/ae9ac2cc-4610-42c9-b848-23acb9b935db
+Content-Type: application/json
+
+{
+    "name":"User"
+}
+
+###
+DELETE  http://localhost:5000/role/dbad7a8e-3a37-40aa-8406-8a5a803eb815

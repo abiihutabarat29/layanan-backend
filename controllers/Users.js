@@ -12,7 +12,7 @@ export const getUsers = async (req, res) => {
 export const getUserById = async (req, res) => {
     try {
         const response = await User.findOne({
-            attributes: ['uuid', 'name', 'email', 'role'],
+            attributes: ['uuid', 'name', 'nip', 'email', 'address', 'phone', 'instansiId', 'RoleId', 'divisionId', 'picture', 'verified', 'status'],
             where: {
                 uuid: req.params.id
             }
@@ -23,16 +23,19 @@ export const getUserById = async (req, res) => {
     }
 }
 export const createUser = async (req, res) => {
-    const { name, email, password, confPassword, role } = req.body;
+    const { name, nip, email, instansiId, RoleId, divisionId, password, confPassword } = req.body;
     if (password !== confPassword)
         return res.status(400).json({ msg: "Password dan Confirm Password tidak sama" });
     const hashPassword = await argon2.hash(password);
     try {
         await User.create({
             name: name,
+            nip: nip,
             email: email,
+            instansiId: instansiId,
+            RoleId: RoleId,
+            divisionId: divisionId,
             password: hashPassword,
-            role: role
         });
         res.status(201).json({ msg: "Pendaftaran Berhasil" });
     } catch (error) {
@@ -46,7 +49,7 @@ export const updateUser = async (req, res) => {
         }
     });
     if (!user) return res.status(404).json({ msg: "User tidak ditemukan." })
-    const { name, email, password, confPassword, role } = req.body;
+    const { name, nip, email, instansiId, RoleId, divisionId, password, confPassword } = req.body;
     let hashPassword;
     if (password === "" || password === null) {
         hashPassword = user.password
@@ -58,9 +61,12 @@ export const updateUser = async (req, res) => {
     try {
         await User.update({
             name: name,
+            nip: nip,
             email: email,
+            instansiId: instansiId,
+            RoleId: RoleId,
+            divisionId: divisionId,
             password: hashPassword,
-            role: role
         }, {
             where: {
                 id: user.id

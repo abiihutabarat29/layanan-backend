@@ -7,7 +7,7 @@ const Instansi = db.define('instansi', {
     uuid: {
         type: DataTypes.STRING,
         defaultValue: DataTypes.UUIDV4,
-        allowNull: null,
+        allowNull: false,
         validate: {
             notEmpty: true,
             len: [3, 100]
@@ -16,7 +16,7 @@ const Instansi = db.define('instansi', {
     name: {
         type: DataTypes.STRING,
         defaultValue: DataTypes.UUIDV4,
-        allowNull: null,
+        allowNull: false,
         validate: {
             notEmpty: true,
         }

@@ -8,7 +8,7 @@ const Division = db.define('division', {
     uuid: {
         type: DataTypes.STRING,
         defaultValue: DataTypes.UUIDV4,
-        allowNull: null,
+        allowNull: false,
         validate: {
             notEmpty: true,
             len: [3, 100]
@@ -17,7 +17,7 @@ const Division = db.define('division', {
     name: {
         type: DataTypes.STRING,
         defaultValue: DataTypes.UUIDV4,
-        allowNull: null,
+        allowNull: false,
         validate: {
             notEmpty: true,
         }
@@ -25,7 +25,7 @@ const Division = db.define('division', {
     instansiId: {
         type: DataTypes.INTEGER,
         defaultValue: DataTypes.UUIDV4,
-        allowNull: null,
+        allowNull: false,
         validate: {
             notEmpty: true,
         }

@@ -7,7 +7,7 @@ const Role = db.define('Role', {
     uuid: {
         type: DataTypes.STRING,
         defaultValue: DataTypes.UUIDV4,
-        allowNull: null,
+        allowNull: false,
         validate: {
             notEmpty: true,
             len: [3, 100]
@@ -16,7 +16,7 @@ const Role = db.define('Role', {
     name: {
         type: DataTypes.STRING,
         defaultValue: DataTypes.UUIDV4,
-        allowNull: null,
+        allowNull: false,
         validate: {
             notEmpty: true,
         }
