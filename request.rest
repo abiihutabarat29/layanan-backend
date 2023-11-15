@@ -1,3 +1,4 @@
+//Modul Users
 POST http://localhost:5000/users
 Content-Type: application/json
 
@@ -46,7 +47,7 @@ POST http://localhost:5000/login
 Content-Type: application/json
 
 {
-    "email":"kurnia@gmail.com",
+    "email":"agung@gmail.com",
     "password":"12345678"
 }
 
@@ -56,6 +57,8 @@ GET http://localhost:5000/me
 ###
 DELETE http://localhost:5000/logout
 
+
+//Modul Product
 ###
 GET http://localhost:5000/products
 
@@ -86,6 +89,8 @@ Content-Type: application/json
 ###
 DELETE  http://localhost:5000/products/ae5b0e7d-c808-4d04-ac49-8cdf8fb4cf7e
 
+
+// Modul Instansi
 ###
 POST http://localhost:5000/instansi
 Content-Type: application/json
@@ -95,4 +100,44 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:5000/instansi/
+GET http://localhost:5000/instansi
+
+###
+PATCH http://localhost:5000/instansi/e05532c9-d6a4-49b5-803a-32b3c4c3134b
+Content-Type: application/json
+
+{
+    "name":"Dinas Pencatatan dan Kependudukan"
+}
+
+###
+DELETE  http://localhost:5000/instansi/e05532c9-d6a4-49b5-803a-32b3c4c3134b
+
+
+// Modul Divisi
+###
+POST http://localhost:5000/division
+Content-Type: application/json
+
+{
+    "name":"Bidang Informasi Komunikasi Publik",
+    "instansiId": 1
+}
+
+###
+GET http://localhost:5000/division
+
+###
+GET http://localhost:5000/division/0f9635ad-997b-4739-8378-3d769f5c90b6
+
+###
+PATCH http://localhost:5000/division/0f9635ad-997b-4739-8378-3d769f5c90b6
+Content-Type: application/json
+
+{
+    "name":"Bidang Informasi Komunikasi Publik",
+    "instansiId": 1
+}
+
+###
+DELETE  http://localhost:5000/division/0f9635ad-997b-4739-8378-3d769f5c90b6

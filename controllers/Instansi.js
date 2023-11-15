@@ -3,11 +3,9 @@ import Instansi from "../models/InstansiModel.js";
 export const getInstansi = async (req, res) => {
     try {
         let response;
-        if (req.role === "admin") {
-            response = await Instansi.findAll({
-                attributes: ['uuid', 'name'],
-            });
-        }
+        response = await Instansi.findAll({
+            attributes: ['uuid', 'name'],
+        });
         res.status(200).json(response);
     } catch (error) {
         res.status(500).json({ msg: error.message });
