@@ -11,7 +11,7 @@ export const verifyUser = async (req, res, next) => {
     });
     if (!user) return res.status(404).json({ msg: "User tidak ditemukan" });
     req.userId = user.id;
-    req.role = user.role;
+    req.role = user.RoleId;
     next();
 }
 
@@ -22,6 +22,6 @@ export const adminOnly = async (req, res, next) => {
         }
     });
     if (!user) return res.status(404).json({ msg: "User tidak ditemukan" });
-    if (user.role !== "admin") return res.status(403).json({ msg: "Akses ditolak!" });
+    if (user.RoleId !== 1) return res.status(403).json({ msg: "Akses ditolak!" });
     next();
 }

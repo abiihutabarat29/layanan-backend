@@ -3,8 +3,8 @@ POST http://localhost:5000/users
 Content-Type: application/json
 
 {
-    "name":"Abii Hutabarat",
     "nip":"121212121212121212",
+    "name":"Abii Hutabarat",
     "email":"abiihutabarat@gmail.com",
     "instansiId":"1",
     "RoleId":"1",

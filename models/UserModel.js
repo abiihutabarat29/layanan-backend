@@ -47,6 +47,9 @@ const Users = db.define('users', {
         type: DataTypes.STRING,
         defaultValue: DataTypes.UUIDV4,
         allowNull: false,
+        validate: {
+            notEmpty: true,
+        }
     },
     address: {
         type: DataTypes.STRING,
@@ -78,9 +81,6 @@ const Users = db.define('users', {
         type: DataTypes.INTEGER,
         defaultValue: DataTypes.UUIDV4,
         allowNull: true,
-        validate: {
-            notEmpty: true,
-        }
     },
     picture: {
         type: DataTypes.STRING,
